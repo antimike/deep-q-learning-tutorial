@@ -75,6 +75,7 @@ class QAgent:
 
     def train(self) -> None:
         for _ in range(self._max_episodes):
+            # TODO: Short-circuit if episode reward is optimal for k consecutive runs
             self._run_episode(self._apply_update)
             self._update_decay_rate()
 
