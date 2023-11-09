@@ -1,6 +1,6 @@
 from typing import Union, TypeAlias
 
-Number: TypeAlias = Union(int, float)
+Number: TypeAlias = Union[int, float]
 
 
 def calculate_bellman_update(q_prev: float, q_curr: float, reward: Number,

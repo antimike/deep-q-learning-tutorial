@@ -1,4 +1,7 @@
 from gymnasium import register, make
+from typing import TypeAlias, Tuple
+
+State: TypeAlias = Tuple[int, dict]
 
 register(
     reward_threshold=0.82,
@@ -11,4 +14,4 @@ register(
     id="NonSlipFrozenLake-v0",
 )
 
-env = make("NonSlipFrozenLake-v0")
+env = make("NonSlipFrozenLake-v0", render_mode="human")
