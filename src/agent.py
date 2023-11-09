@@ -58,15 +58,7 @@ class QAgent:
             action = self.get_action(state)
             new_state, reward, terminated, truncated, info = self.env.step(
                 action)
-            try:
-                callback(state, action, new_state, reward)
-            except:
-                print(f"Callback failed with arguments:")
-                print(f"    state = {state}")
-                print(f"    action = {action}")
-                print(f"    new_state = {new_state}")
-                print(f"    reward = {reward}")
-                raise
+            callback(state, action, new_state, reward)
             total_reward += reward
             if terminated or truncated:
                 break
